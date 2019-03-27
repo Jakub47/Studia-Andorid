@@ -23,10 +23,12 @@ namespace Lab3
             SetContentView(Resource.Layout.RecActivity);
             string name = Intent.GetStringExtra("name" ?? "Not recv");
             string email = Intent.GetStringExtra("email" ?? "Not recv");
+            var textName = FindViewById<TextView>(Resource.Id.textView1);
             var txtEmail = FindViewById<TextView>(Resource.Id.txtEmail);
             var btnGoBack = FindViewById<TextView>(Resource.Id.button1);
 
             txtEmail.Text = email;
+            textName.Text = name;
             btnGoBack.Click += delegate { this.Finish(); };
         }
     }
