@@ -32,38 +32,42 @@ public class OrderPizza : MonoBehaviour
     public void ShowActivityAndCount()
     {
         string pizza = pizzasDropDown.captionText.text;
+        Paragon paragon = new Paragon();
+
         switch(pizza)
         {
             case "margarita":
-                totalCost += 20; pizzaPrice = 20;
+                paragon.Result += 20; paragon.PizzaPrice = 20;
                 break;
             case "peperoni":
-                totalCost += 25; pizzaPrice = 25;
+                paragon.Result += 25; paragon.PizzaPrice = 25;
                 break;
             case "meat":
-                totalCost += 29; pizzaPrice = 29;
+                paragon.Result += 29; paragon.PizzaPrice = 29;
                 break;
         }
 
         if(sos.value != 0)
         {
-            totalCost += 10; sosPrice = 10;
+            paragon.Result += 10; paragon.SosPrice = 10;
         }
+        
 
         if(pepsi.isOn)
         {
-            totalCost += 5; pepsiPrice = 5;
+            paragon.Result += 5; paragon.PepsiPrice = 5;
         }
+
 
         if(frytki.isOn)
         {
-            totalCost += 12; frytkiPrice = 12;
+            paragon.Result += 12; paragon.FrytkiPrice = 12;
         }
+
 
         panel1.SetActive(false);
         panel2.SetActive(true);
-        panel2.SendMessage("SetValuesInTable",new Paragon { PizzaPrice = pizzaPrice , FrytkiPrice = frytkiPrice, PepsiPrice = pepsiPrice,
-                            SosPrice = sosPrice, Result = totalCost});
+        panel2.SendMessage("SetValuesInTable",paragon);
     }
 
     public void RetrunToMainActivity()
@@ -84,4 +88,6 @@ public class OrderPizza : MonoBehaviour
         panel3.SetActive(false);
         panel1.SetActive(true);
     }
+
+
 }
