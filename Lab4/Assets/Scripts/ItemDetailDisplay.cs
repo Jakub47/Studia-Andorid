@@ -31,7 +31,6 @@ public class ItemDetailDisplay : MonoBehaviour {
         titleDescription.Add("czosnkowy", "Najlepszy na wampiry");
         titleDescription.Add("ketchup", "ketchup najelpszy do wszystkiego");
         titleDescription.Add("musztarda", "dla hardkorow");
-
     }
 	
 	// Update is called once per frame

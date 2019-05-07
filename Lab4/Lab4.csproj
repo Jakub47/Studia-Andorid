@@ -235,7 +235,6 @@
     <Compile Include="Assets\Scripts\CurrentPanel.cs" />
     <Compile Include="Assets\Scripts\ItemDetailDisplay.cs" />
     <Compile Include="Assets\Scripts\ListOfItemsPanel.cs" />
-    <Compile Include="Assets\Scripts\MinScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
