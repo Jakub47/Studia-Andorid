@@ -13,6 +13,9 @@ public class pizzaSelect : MonoBehaviour
 
 
     public Text textArea;
+    public GameObject panel1;
+    public GameObject panel2;
+    public GameObject inserPanel;
 
     // Use this for initialization
     void Start()
@@ -45,6 +48,13 @@ public class pizzaSelect : MonoBehaviour
         }        
     }
 
+    public void ZmienPanel()
+    {
+        panel1.SetActive(false);
+        panel2.SetActive(false);
+        inserPanel.SetActive(true);
+    }
+
     public IEnumerator PizzaFromDB()
     {
         string[] pizzas;
@@ -57,8 +67,16 @@ public class pizzaSelect : MonoBehaviour
 
         for (int i = 0; i < pizzas.Length; i++)
         {
-            pizzas[i] = "N" + pizzas[i];
-            textArea.text += pizzas[i] + Environment.NewLine;
+            if (i == pizzas.Length - 1)
+            {
+                pizzas[i] = "N" + pizzas[i];
+                textArea.text += pizzas[i];
+            }
+            else
+            {
+                pizzas[i] = "N" + pizzas[i];
+                textArea.text += pizzas[i] + Environment.NewLine;
+            }
         }
     }
 
@@ -74,8 +92,16 @@ public class pizzaSelect : MonoBehaviour
 
         for (int i = 0; i < napoje.Length; i++)
         {
-            napoje[i] = "N" + napoje[i];
-            textArea.text += napoje[i] + Environment.NewLine;
+            if (i == napoje.Length - 1)
+            {
+                napoje[i] = "N" + napoje[i];
+                textArea.text += napoje[i];
+            }
+            else
+            {
+                napoje[i] = "N" + napoje[i];
+                textArea.text += napoje[i] + Environment.NewLine;
+            }
         }
     }
 
@@ -91,8 +117,18 @@ public class pizzaSelect : MonoBehaviour
 
         for (int i = 0; i < sosy.Length; i++)
         {
-            sosy[i] = "N" + sosy[i];
-            textArea.text += sosy[i] + Environment.NewLine;
+            if(i == sosy.Length - 1)
+            {
+                sosy[i] = "N" + sosy[i];
+                textArea.text += sosy[i];
+            }
+            else
+            {
+                sosy[i] = "N" + sosy[i];
+                textArea.text += sosy[i] + Environment.NewLine;
+            }            
         }
     }
+
+
 }
